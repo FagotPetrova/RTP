@@ -18,8 +18,8 @@
     background-image: url("back.jpg");
     background-repeat: no-repeat;
     position: absolute;
-    width: 500px;
-    height: 700px;
+    width: auto;
+    height: 1000px;
 }
 .text{
     font-family: "Arial Black";
