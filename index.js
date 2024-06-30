@@ -1,12 +1,22 @@
-const slider = document.getElementById('slider');
-  const valueField = document.getElementById('valueField');
+// Получаем все слайдеры и текстовые поля
+const sliders = document.querySelectorAll('input[type="range"]');
+const valueFields = document.querySelectorAll('input[type="number"]');
 
-  // Функция обновления текстового поля при изменении слайдера
-  slider.oninput = function() {
-    valueField.value = this.value;
-  }
+// Функция для синхронизации значения слайдера и текстового поля
+function syncValues(source, target) {
+  target.value = source.value;
+}
 
-  // Функция обновления слайдера при изменении текстового поля
-  valueField.oninput = function() {
-    slider.value = this.value;
-  }
+// Назначаем обработчики событий для слайдеров
+sliders.forEach((slider, index) => {
+  slider.addEventListener('input', () => {
+    syncValues(slider, valueFields[index]);
+  });
+});
+
+// Назначаем обработчики событий для текстовых полей
+valueFields.forEach((field, index) => {
+  field.addEventListener('input', () => {
+    syncValues(field, sliders[index]);
+  });
+});
