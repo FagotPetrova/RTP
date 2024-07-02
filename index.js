@@ -15,9 +15,7 @@ function result() {
     let H = parseFloat(document.getElementById("value_H").value)
     let O = parseFloat(document.getElementById("value_O").value)
     let N = parseFloat(document.getElementById("value_N").value)
-    let Cl = parseFloat(document.getElementById("value_Cl").value)
-    let S = parseFloat(document.getElementById("value_S").value)
-    let Si = parseFloat(document.getElementById("value_Si").value)
+
     let dH0 = parseFloat(document.getElementById("value_dH0").value)
     let calculatedResult = 100 / (h_c * c + h_H * H + h_0 * O + h_N * N + h_f * dH0 + 1);
     document.getElementById("value_result").value = calculatedResult;
